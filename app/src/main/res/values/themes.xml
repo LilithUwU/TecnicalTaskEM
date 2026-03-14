@@ -3,7 +3,38 @@
     <style name="Base.Theme.TecnicalTaskEM" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@color/background</item>
+
+        <!-- Apply the custom button style globally -->
+        <item name="materialButtonStyle">@style/Widget.App.MainButton</item>
     </style>
 
     <style name="Theme.TecnicalTaskEM" parent="Base.Theme.TecnicalTaskEM" />
+
+    <!-- Custom Button Style -->
+    <style name="Widget.App.MainButton" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/button_main_bg</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.App.Button</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.LabelLarge</item>
+    </style>
+
+    <style name="Widget.App.SecondaryButton" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/button_secondary_bg</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.App.Button</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.LabelLarge</item>
+    </style>
+
+
+
+    <style name="ShapeAppearance.App.Button" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">@dimen/button_radius</item>
+    </style>
+
+    <style name="TextAppearance.App.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/button_main_text</item>
+        <item name="android:textFontWeight" >500</item>
+        <item name="android:textStyle">normal</item>
+    </style>
 </resources>

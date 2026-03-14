@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SocialMediaButton">
+        <attr name="social_text" format="string" />
+        <attr name="social_icon" format="reference" />
+        <attr name="social_background_color" format="color" />
+        <attr name="social_text_color" format="color" />
+    </declare-styleable>
+</resources>

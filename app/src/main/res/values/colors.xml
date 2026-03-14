@@ -2,4 +2,20 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Main Button Colors -->
+    <color name="button_main_bg">#12B956</color>
+    <color name="button_main_text">#F2F2F3</color>
+    <color name="button_secondary_bg">#24252A</color>
+
+    <!-- Social Media Colors -->
+    <color name="button_vk">#2683ED</color>
+    <color name="button_ok">#F98509</color>
+
+
+    <color name="background">#151515</color>
+    <color name="transparent">#000000</color>
+    <color name="text_field_background">#32333A</color>
+    <color name="foreground">#F2F2F3</color>
+
 </resources>
