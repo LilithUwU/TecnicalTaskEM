@@ -4,6 +4,7 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:windowBackground">@color/background</item>
+        <item name="fontFamily">@font/roboto</item>
 
         <!-- Apply the custom button style globally -->
         <item name="materialButtonStyle">@style/Widget.App.MainButton</item>
@@ -36,5 +37,10 @@
         <item name="android:textColor">@color/button_main_text</item>
         <item name="android:textFontWeight" >500</item>
         <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="RoundedCorners16" parent="">
+        <item name="cornerSize">16dp</item>
+        <item name="cornerFamily">rounded</item>
     </style>
 </resources>

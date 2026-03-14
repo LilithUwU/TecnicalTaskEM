@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.tecnicaltaskem.databinding.ActivityMainBinding
+import com.example.tecnicaltaskem.databinding.CourseViewBinding
 
 class MainActivity : AppCompatActivity() {
 

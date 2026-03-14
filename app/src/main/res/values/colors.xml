@@ -16,6 +16,5 @@
     <color name="background">#151515</color>
     <color name="transparent">#000000</color>
     <color name="text_field_background">#32333A</color>
-    <color name="foreground">#F2F2F3</color>
 
 </resources>

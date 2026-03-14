@@ -3,5 +3,5 @@
     <dimen name="button_radius">30dp</dimen>
     <dimen name="card_radius">16dp</dimen>
     <dimen name="card_image_radius">12dp</dimen>
-
+    <dimen name="main_padding">8dp</dimen>
 </resources>
