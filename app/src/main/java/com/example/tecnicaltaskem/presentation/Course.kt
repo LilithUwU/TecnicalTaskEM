@@ -12,7 +12,8 @@ data class Course(
     val rate: Float,
     val startDate: Long,
     val hasLike: Boolean,
-    val publishDate: Long
+    val publishDate: Long,
+    val imgLink: String
 ) {
 
     fun getFormattedDate(date: Long): String {

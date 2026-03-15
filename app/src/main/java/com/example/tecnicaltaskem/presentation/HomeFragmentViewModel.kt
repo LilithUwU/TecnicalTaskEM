@@ -1,6 +1,8 @@
 package com.example.tecnicaltaskem.presentation
 
+import android.widget.ImageView
 import androidx.lifecycle.ViewModel
+import com.bumptech.glide.Glide
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -13,7 +15,8 @@ val courses = listOf(
         rate = 4.9f,
         startDate = 1716336000000L,
         hasLike = false,
-        publishDate = 1684713600000L
+        publishDate = 1684713600000L,
+        imgLink = "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*O00ZHwDkY3yrtT80WBhyGQ.jpeg"
     ),
     Course(
         id = 101,
@@ -23,7 +26,8 @@ val courses = listOf(
         rate = 3.9f,
         startDate = 1725926400000L,
         hasLike = false,
-        publishDate = 1705708800000L
+        publishDate = 1705708800000L,
+        imgLink = "https://www.ikreate.com.np/assets/uploads/services/2025-07-01_hGcqJoI3SRj0MnYAwXui7BeDbzmF4NQH2.jpg"
     ),
     Course(
         id = 102,
@@ -33,7 +37,8 @@ val courses = listOf(
         rate = 4.3f,
         startDate = 1728691200000L,
         hasLike = true,
-        publishDate = 1723248000000L
+        publishDate = 1723248000000L,
+        imgLink = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEXNKTRoWagYMhO5lrdHKn0_IBh67ltFz2iPtWTFTOiC8LOj8q"
     ),
     Course(
         id = 103,
@@ -43,7 +48,8 @@ val courses = listOf(
         rate = 4.5f,
         startDate = 1713139200000L,
         hasLike = false,
-        publishDate = 1705104000000L
+        publishDate = 1705104000000L,
+        imgLink = "https://img.freepik.com/premium-photo/online-exam-test-3d-illustration-3d-online-exam-course-concept-with-books-computer_554821-1742.jpg"
     ),
     Course(
         id = 104,
@@ -53,10 +59,18 @@ val courses = listOf(
         rate = 4.7f,
         startDate = 1718841600000L,
         hasLike = false,
-        publishDate = 1710201600000L
+        publishDate = 1710201600000L,
+        imgLink = "https://www.shutterstock.com/image-illustration/3d-online-education-concept-digital-600nw-2714349905.jpg"
     )
 )
 
+fun loadImageWithPlaceholder(imageView: ImageView, imageUrl: String) {
+    Glide.with(imageView.context)
+        .load(imageUrl)
+        .placeholder(android.R.drawable.ic_dialog_info) // Show while loading
+        .error(android.R.drawable.ic_dialog_alert) // Show if error
+        .into(imageView)
+}
 
 class HomeFragmentViewModel: ViewModel() {
     fun getCourses() : StateFlow<List<Course>> {
