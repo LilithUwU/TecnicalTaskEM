@@ -48,10 +48,10 @@ class HomeFragment : Fragment() {
         adapter = CourseAdapter(emptyList()) { _ ->
             findNavController().navigate(R.id.navigation_details)
         }
+
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
     }
-
     private fun observeViewModel() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getCourses().collect { courses ->

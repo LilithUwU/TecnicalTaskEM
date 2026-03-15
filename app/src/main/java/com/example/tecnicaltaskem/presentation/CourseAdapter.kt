@@ -2,7 +2,10 @@ package com.example.tecnicaltaskem.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.tecnicaltaskem.R
 import com.example.tecnicaltaskem.databinding.CourseViewBinding
 
 class CourseAdapter(
@@ -18,12 +21,20 @@ class CourseAdapter(
             binding.textContent.text = course.text
             binding.textRating.text = course.rate.toString()
             binding.textDate.text = course.getFormattedDate(course.startDate)
-            binding.textView6.text = "${course.price} ₽"
+            binding.textPrice.text = binding.root.context.getString(R.string.formatted_rub, course.price)
 
-            binding.root.setOnClickListener {
-                onCourseClick(course)
-            }
+            binding.buttonMoreInfo.setOnClickListener { onCourseClick(course) }
+
+            loadImageWithPlaceholder(binding.imageView, course.imgLink)
         }
+    }
+
+    fun loadImageWithPlaceholder(imageView: ImageView, imageUrl: String) {
+        Glide.with(imageView.context)
+            .load(imageUrl)
+            .placeholder(android.R.drawable.ic_dialog_info)
+            .error(android.R.drawable.ic_dialog_alert)
+            .into(imageView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {

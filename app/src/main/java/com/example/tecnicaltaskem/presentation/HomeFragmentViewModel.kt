@@ -60,17 +60,11 @@ val courses = listOf(
         startDate = 1718841600000L,
         hasLike = false,
         publishDate = 1710201600000L,
-        imgLink = "https://www.shutterstock.com/image-illustration/3d-online-education-concept-digital-600nw-2714349905.jpg"
+        imgLink = "https://img.freepik.com/free-vector/data-concept-illustration-idea-collecting-analysing-using_613284-1574.jpg?semt=ais_hybrid&w=740&q=80"
     )
 )
 
-fun loadImageWithPlaceholder(imageView: ImageView, imageUrl: String) {
-    Glide.with(imageView.context)
-        .load(imageUrl)
-        .placeholder(android.R.drawable.ic_dialog_info) // Show while loading
-        .error(android.R.drawable.ic_dialog_alert) // Show if error
-        .into(imageView)
-}
+
 
 class HomeFragmentViewModel: ViewModel() {
     fun getCourses() : StateFlow<List<Course>> {
