@@ -22,12 +22,12 @@ class HomeFragment : Fragment() {
         return binding.root
     }
     
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.btnGoToDetails.setOnClickListener {
-            findNavController().navigate(R.id.navigation_details)
-        }
-    }
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        binding.btnGoToDetails.setOnClickListener {
+//            findNavController().navigate(R.id.navigation_details)
+//        }
+//    }
 
 
     override fun onDestroyView() {
