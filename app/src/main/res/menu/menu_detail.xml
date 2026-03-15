@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_bookmark"
+        android:icon="@drawable/navigation_bookmark"
+        android:iconTint="@color/button_main_bg"
+        android:title="Bookmark"
+        app:showAsAction="always"
+        app:background="@drawable/image_button_shape" />
+
+    <item
+        android:id="@+id/action_back"
+        android:icon="@drawable/arrow_left"
+        android:iconTint="@color/button_main_bg"
+        android:title="Back"
+        app:showAsAction="always"
+        app:background="@drawable/image_button_shape" />
+</menu>

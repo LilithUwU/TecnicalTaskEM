@@ -25,4 +25,9 @@
         android:name="com.example.tecnicaltaskem.presentation.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/navigation_details"
+        android:name="com.example.tecnicaltaskem.presentation.DetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_details" />
 </navigation>
