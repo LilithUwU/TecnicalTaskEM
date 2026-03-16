@@ -1,6 +1,7 @@
 package com.example.tecnicaltaskem.presentation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,7 +47,9 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerView() {
         adapter = CourseAdapter(emptyList()) { course ->
+            Log.d("Database", "Course clicked: ${course.id}")
             viewModel.selectCourse(course)
+            Log.d("Database", "After selectCourse: ${viewModel.selectedCourse?.id}")
             findNavController().navigate(R.id.navigation_details)
         }
 

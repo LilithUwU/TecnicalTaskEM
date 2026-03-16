@@ -1,5 +1,6 @@
 package com.example.tecnicaltaskem.presentation
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.tecnicaltaskem.data.local.entity.Course
@@ -11,17 +12,23 @@ import kotlinx.coroutines.launch
 import org.koin.java.KoinJavaComponent.inject
 
 class HomeFragmentViewModel: ViewModel() {
-    private val repository: IRepository by inject(IRepository::class.java)
 
 
     var selectedCourse: Course? = null
 
-    private val _savedCourses = MutableStateFlow<List<Course>>(emptyList())
-    val savedCourses: StateFlow<List<Course>> = _savedCourses
-
     fun selectCourse(course: Course) {
         selectedCourse = course
     }
+
+
+    private val repository: IRepository by inject(IRepository::class.java)
+
+
+    private val _savedCourses = MutableStateFlow<List<Course>>(emptyList())
+    val savedCourses: StateFlow<List<Course>> = _savedCourses
+
+
+
 
     fun getMockCourses() : StateFlow<List<Course>> {
         return MutableStateFlow(mockCourses)
@@ -33,8 +40,14 @@ class HomeFragmentViewModel: ViewModel() {
 
     fun saveCourse() {
         viewModelScope.launch {
-            if (selectedCourse != null) {
-                repository.insert(selectedCourse!!)
+            Log.d("Database", "Saving course... ${selectedCourse}")
+            selectedCourse?.let {
+                try {
+                    repository.insert(it)
+                    Log.d("Database", "Course inserted: ${it.id}")
+                } catch (e: Exception) {
+                    Log.e("Database", "Insert failed: ${e.message}")
+                }
             }
         }
     }

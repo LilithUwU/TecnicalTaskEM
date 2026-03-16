@@ -1,12 +1,14 @@
 package com.example.tecnicaltaskem.di
 
 
-import android.app.Application
 import androidx.room.Room
 import com.example.tecnicaltaskem.data.AppDatabase
+import com.example.tecnicaltaskem.data.local.dao.Dao
 import com.example.tecnicaltaskem.data.repository.IRepository
 import com.example.tecnicaltaskem.data.repository.Repository
+import com.example.tecnicaltaskem.presentation.HomeFragmentViewModel
 import org.koin.android.ext.koin.androidContext
+import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 
 val appModule = module {
@@ -22,6 +24,9 @@ val appModule = module {
 
     single { get<AppDatabase>().courseDao() }
 
-    // Bind Repository to IRepository interface
-    single<IRepository> { Repository(get()) }
+    single<IRepository> {
+        Repository(get<Dao>())
+    }
+
+    viewModelOf(::HomeFragmentViewModel)
 }

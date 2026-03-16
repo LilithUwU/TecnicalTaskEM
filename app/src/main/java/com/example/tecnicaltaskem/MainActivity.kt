@@ -1,9 +1,11 @@
 package com.example.tecnicaltaskem
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.NavHostFragment
@@ -13,12 +15,8 @@ import com.example.tecnicaltaskem.presentation.HomeFragmentViewModel
 import kotlin.getValue
 
 class MainActivity : AppCompatActivity() {
-
+    private val viewModel: HomeFragmentViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
-
-    private val viewModel = HomeFragmentViewModel()
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
@@ -45,6 +43,8 @@ class MainActivity : AppCompatActivity() {
             navController.popBackStack()
         }
         binding.btnBookmark.setOnClickListener {
+            Log.d("Database", "Button clicked!")
+
             viewModel.saveCourse()
             Toast.makeText(this, "Bookmark", Toast.LENGTH_SHORT).show()
         }
