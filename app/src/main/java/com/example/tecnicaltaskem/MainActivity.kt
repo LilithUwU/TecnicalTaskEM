@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             navController.popBackStack()
         }
         binding.btnBookmark.setOnClickListener {
-
+            viewModel.saveCourse()
             Toast.makeText(this, "Bookmark", Toast.LENGTH_SHORT).show()
         }
     }

@@ -31,12 +31,15 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val course = viewModel.selectedCourse.value!!
-        binding.textHeadline.text = course.title
-        binding.textDescription.text = course.text
-        binding.textRating.text = course.rate.toString()
-        binding.textDate.text = getFormattedDate(course.startDate)
-        loadImageWithPlaceholder(binding.imageView, course.imgLink)
+
+        val course = viewModel.selectedCourse
+        if (course != null) {
+            binding.textHeadline.text = course.title
+            binding.textDescription.text = course.text
+            binding.textRating.text = course.rate.toString()
+            binding.textDate.text = getFormattedDate(course.startDate)
+            loadImageWithPlaceholder(binding.imageView, course.imgLink)
+        }
     }
 
     override fun onDestroyView() {
