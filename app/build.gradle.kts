@@ -52,4 +52,8 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation (libs.glide)
     annotationProcessor (libs.compiler)
+
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
+    testImplementation(libs.androidx.room.testing)
 }
