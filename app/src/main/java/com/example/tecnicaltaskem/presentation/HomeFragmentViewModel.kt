@@ -1,8 +1,6 @@
 package com.example.tecnicaltaskem.presentation
 
-import android.widget.ImageView
 import androidx.lifecycle.ViewModel
-import com.bumptech.glide.Glide
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -67,6 +65,13 @@ val courses = listOf(
 
 
 class HomeFragmentViewModel: ViewModel() {
+    private val _selectedCourse = MutableStateFlow<Course?>(null)
+    val selectedCourse: StateFlow<Course?> = _selectedCourse
+
+    fun selectCourse(course: Course) {
+        _selectedCourse.value = course
+    }
+
     fun getCourses() : StateFlow<List<Course>> {
         return MutableStateFlow(courses)
     }

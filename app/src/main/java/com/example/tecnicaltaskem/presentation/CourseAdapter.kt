@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.tecnicaltaskem.R
 import com.example.tecnicaltaskem.databinding.CourseViewBinding
 
@@ -29,13 +28,6 @@ class CourseAdapter(
         }
     }
 
-    fun loadImageWithPlaceholder(imageView: ImageView, imageUrl: String) {
-        Glide.with(imageView.context)
-            .load(imageUrl)
-            .placeholder(android.R.drawable.ic_dialog_info)
-            .error(android.R.drawable.ic_dialog_alert)
-            .into(imageView)
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
         val binding = CourseViewBinding.inflate(
