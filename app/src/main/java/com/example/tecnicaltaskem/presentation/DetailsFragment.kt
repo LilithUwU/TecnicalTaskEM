@@ -35,7 +35,7 @@ class DetailsFragment : Fragment() {
         binding.textHeadline.text = course.title
         binding.textDescription.text = course.text
         binding.textRating.text = course.rate.toString()
-        binding.textDate.text = course.getFormattedDate(course.startDate)
+        binding.textDate.text = getFormattedDate(course.startDate)
         loadImageWithPlaceholder(binding.imageView, course.imgLink)
     }
 

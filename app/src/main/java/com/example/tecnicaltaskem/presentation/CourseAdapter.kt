@@ -19,7 +19,7 @@ class CourseAdapter(
             binding.textHeadline.text = course.title
             binding.textContent.text = course.text
             binding.textRating.text = course.rate.toString()
-            binding.textDate.text = course.getFormattedDate(course.startDate)
+            binding.textDate.text = getFormattedDate(course.startDate)
             binding.textPrice.text = binding.root.context.getString(R.string.formatted_rub, course.price)
 
             binding.buttonMoreInfo.setOnClickListener { onCourseClick(course) }
