@@ -1,36 +1,43 @@
 [versions]
+# Build Tools
 agp = "9.1.0"
-appcompatVersion = "1.6.1"
-coreKtx = "1.17.0"
-glide = "5.0.5"
-googleMaterial = "1.13.0"
-junit = "4.13.2"
-junitVersion = "1.3.0"
-espressoCore = "3.7.0"
+
+# Core Dependencies
+activity = "1.13.0"
 appcompat = "1.7.1"
-material = "1.10.0"
-activity = "1.12.4"
-constraintlayout = "2.1.4"
-materialVersion = "1.11.0"
+constraintlayout = "2.2.1"
+coreKtx = "1.18.0"
+material = "1.13.0"
 navigation = "2.9.7"
 recyclerview = "1.4.0"
 
+# Third Party
+glide = "5.0.5"
+
+# Testing
+espressoCore = "3.7.0"
+junit = "4.13.2"
+junitVersion = "1.3.0"
+
 [libraries]
-androidx-appcompat-v161 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
+# AndroidX
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+
+# UI & Tools
+compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+
+# Unit & Instrumentation Testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
-androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
-androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
-material-v1110 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
-material-v1130 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
-androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

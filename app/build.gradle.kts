@@ -37,9 +37,6 @@ android {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
-
-
-
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
@@ -50,9 +47,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.material.v1110)
-    implementation(libs.androidx.appcompat.v161)
-    implementation(libs.material.v1130)
+    implementation(libs.material)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.core.ktx)
     implementation (libs.glide)
-    annotationProcessor ("com.github.bumptech.glide:compiler:5.0.5")
+    annotationProcessor (libs.compiler)
 }
