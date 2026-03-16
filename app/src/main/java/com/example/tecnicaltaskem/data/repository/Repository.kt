@@ -4,21 +4,20 @@ import com.example.tecnicaltaskem.data.local.dao.Dao
 import com.example.tecnicaltaskem.data.local.entity.Course
 import kotlinx.coroutines.flow.Flow
 
-class Repository(private val courseDao: Dao) {
-    
-    suspend fun getAllCourses(): Flow<List<Course>> {
-        return courseDao.getAll()
-    }
+interface IRepository {
+    suspend fun getCourses(): Flow<List<Course>>
+    suspend fun delete(id: Int)
+    suspend fun insert(course: Course)
+}
 
-    suspend fun getLikedCourses(): Flow<List<Course>> {
-        return courseDao.getCourses()
+class Repository (private val dao: Dao) : IRepository {
+    override suspend fun getCourses(): Flow<List<Course>> {
+        return dao.getAll()
     }
-
-    suspend fun insert(course: Course) {
-        courseDao.insert(course)
+    override suspend fun delete(id: Int) {
+        dao.delete(id)
     }
-
-    suspend fun delete(id: Int) {
-        courseDao.delete(id)
+    override suspend fun insert(course: Course) {
+        dao.insert(course)
     }
 }

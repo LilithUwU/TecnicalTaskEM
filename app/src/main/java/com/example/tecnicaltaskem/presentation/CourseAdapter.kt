@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tecnicaltaskem.R
+import com.example.tecnicaltaskem.data.local.entity.Course
 import com.example.tecnicaltaskem.databinding.CourseViewBinding
 
 class CourseAdapter(

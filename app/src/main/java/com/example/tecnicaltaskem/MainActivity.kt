@@ -5,13 +5,20 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.tecnicaltaskem.databinding.ActivityMainBinding
+import com.example.tecnicaltaskem.presentation.HomeFragmentViewModel
+import kotlin.getValue
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val viewModel = HomeFragmentViewModel()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
@@ -38,6 +45,7 @@ class MainActivity : AppCompatActivity() {
             navController.popBackStack()
         }
         binding.btnBookmark.setOnClickListener {
+
             Toast.makeText(this, "Bookmark", Toast.LENGTH_SHORT).show()
         }
     }

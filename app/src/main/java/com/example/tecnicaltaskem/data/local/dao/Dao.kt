@@ -12,9 +12,6 @@ interface Dao{
     @Query("SELECT * FROM courses")
     fun getAll(): Flow<List<Course>>
 
-    @Query("SELECT * FROM courses WHERE hasLike = true")
-    fun getCourses(): Flow<List<Course>>
-
     @Query("DELETE FROM courses WHERE id = :id")
     fun delete(id: Int)
 

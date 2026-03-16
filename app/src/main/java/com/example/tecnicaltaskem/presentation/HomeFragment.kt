@@ -55,7 +55,7 @@ class HomeFragment : Fragment() {
     }
     private fun observeViewModel() {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.getCourses().collect { courses ->
+            viewModel.getMockCourses().collect { courses ->
                 adapter.updateCourses(courses)
             }
         }
