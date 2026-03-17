@@ -42,7 +42,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/search_bar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/search_bar"
-                app:tint="@color/button_main_bg" />
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -54,6 +54,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"
+        android:fontFamily="@font/roboto"
+        android:textStyle="bold"
         android:text="@string/sort_by_publish_date"
         android:textAppearance="?attr/textAppearanceButton"
         android:textAllCaps="false"

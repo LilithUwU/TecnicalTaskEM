@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textAppearance="?attr/textAppearanceHeadlineLarge"
 
         android:layout_marginBottom="@dimen/item_spacing" />
 
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/no_account"
-
+                android:textFontWeight="600"
                 android:textAppearance="?attr/textAppearanceCaption" />
 
 
@@ -117,7 +117,7 @@
                 android:focusable="true"
                 android:padding="@dimen/main_padding"
                 android:text="@string/registration"
-
+                android:textFontWeight="600"
                 android:textAppearance="?attr/textAppearanceCaption"
                 android:textColor="@color/button_main_bg"
                 android:textSize="@dimen/text_size_small" />
@@ -130,6 +130,7 @@
             android:clickable="true"
             android:focusable="true"
             android:padding="@dimen/main_padding"
+            android:textFontWeight="600"
             android:text="@string/forgot_password"
             android:textAppearance="?attr/textAppearanceCaption"
             android:textColor="@color/button_main_bg"

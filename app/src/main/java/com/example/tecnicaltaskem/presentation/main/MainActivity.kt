@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -19,9 +21,25 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MainActivity : AppCompatActivity() {
     private val viewModel: AppViewModel by viewModel()
     private lateinit var binding: ActivityMainBinding
+    var shouldApplyPadding = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(window.decorView) { view, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            if (shouldApplyPadding) {
+                view.setPadding(
+                    systemBars.left,
+                    systemBars.top + 12,
+                    systemBars.right,
+                    systemBars.bottom
+                )
+            } else {
+                view.setPadding(0, 0, 0, 0)
+            }
+            insets
+        }
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

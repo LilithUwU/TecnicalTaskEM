@@ -18,6 +18,7 @@
     <!-- Custom Button Style -->
     <style name="Widget.App.MainButton" parent="Widget.Material3.Button">
         <item name="backgroundTint">@color/button_states</item>
+        <item name="fontWeight">500</item>
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance.App.Button</item>
         <item name="android:textAppearance">@style/TextAppearance.App.LabelLarge</item>
     </style>

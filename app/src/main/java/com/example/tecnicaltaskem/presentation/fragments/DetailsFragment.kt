@@ -9,6 +9,7 @@ import com.example.tecnicaltaskem.databinding.FragmentDetailsBinding
 import com.example.tecnicaltaskem.AppViewModel
 import com.example.tecnicaltaskem.presentation.helpers.getFormattedDate
 import com.example.tecnicaltaskem.presentation.helpers.loadImageWithPlaceholder
+import com.example.tecnicaltaskem.presentation.main.MainActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailsFragment : Fragment() {
@@ -29,6 +30,7 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).shouldApplyPadding = false
 
         val course = viewModel.selectedCourse.value
         if (course != null) {
@@ -42,6 +44,7 @@ class DetailsFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        (activity as MainActivity).shouldApplyPadding = true
         _binding = null
     }
 }
