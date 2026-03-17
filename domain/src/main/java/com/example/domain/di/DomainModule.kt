@@ -5,6 +5,6 @@ import com.example.domain.usecase.ToggleBookmarkUseCase
 import org.koin.dsl.module
 
 val domainModule = module {
-    factory { GetCoursesUseCase(get(), get()) }
+    factory { GetCoursesUseCase(get()) }
     factory { ToggleBookmarkUseCase(get()) }
 }

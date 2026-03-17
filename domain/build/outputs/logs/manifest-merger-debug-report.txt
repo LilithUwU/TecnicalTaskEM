@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10501102956829735137.xml:2:13-83
-INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10501102956829735137.xml:2:13-83
+ADDED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16414382441216645523.xml:2:13-83
+INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16414382441216645523.xml:2:13-83
 	package
-		INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10501102956829735137.xml
+		INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16414382441216645523.xml
 	xmlns:android
-		ADDED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10501102956829735137.xml:2:23-81
+		ADDED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16414382441216645523.xml:2:23-81
 uses-sdk
-INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10501102956829735137.xml reason: use-sdk injection requested
-INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10501102956829735137.xml
-INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10501102956829735137.xml
+INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16414382441216645523.xml reason: use-sdk injection requested
+INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16414382441216645523.xml
+INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16414382441216645523.xml
 	android:targetSdkVersion
-		INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10501102956829735137.xml
+		INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16414382441216645523.xml
 	android:minSdkVersion
-		INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10501102956829735137.xml
+		INJECTED from /Users/lilit/TecnicalTaskEM/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16414382441216645523.xml
