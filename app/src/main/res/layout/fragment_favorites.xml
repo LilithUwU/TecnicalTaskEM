@@ -2,17 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:padding="@dimen/main_padding"
     android:layout_height="match_parent">
     <TextView
-        android:layout_marginTop="40dp"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Избранное" />
+        android:text="@string/chosen" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
+        android:layout_marginTop="@dimen/item_spacing"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-
 </LinearLayout>

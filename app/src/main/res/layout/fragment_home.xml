@@ -4,28 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top"
-    android:padding="@dimen/main_padding"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="@dimen/main_padding">
 
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:background="@android:color/transparent"
         app:elevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-           >
+            android:layout_height="wrap_content">
 
             <com.google.android.material.search.SearchBar
                 android:id="@+id/search_bar"
                 android:layout_width="0dp"
 
                 android:layout_height="wrap_content"
-                android:hint="Search courses"
+                android:hint="@string/search_courses"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/filter_button"
                 app:layout_constraintStart_toStartOf="parent"
@@ -33,9 +31,10 @@
 
             <ImageButton
                 android:id="@+id/filter_button"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
+                android:layout_width="@dimen/filter_button_size"
+                android:layout_height="@dimen/filter_button_size"
                 android:background="@drawable/image_button_shape"
+                android:backgroundTint="@color/button_secondary_bg"
                 android:scaleType="centerInside"
                 android:src="@drawable/filter"
                 app:layout_constraintBottom_toBottomOf="@+id/search_bar"
@@ -50,18 +49,18 @@
 
     <TextView
         android:id="@+id/textFilter"
-        android:gravity="end"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="@string/sort_by_publish_date"
+        android:textAppearance="?attr/textAppearanceButton"
+        android:textAllCaps="false"
         android:textColor="@color/button_main_bg"
-        android:drawableEnd="@drawable/sort"
-        android:text="Sort" />
-
-
-
+        app:drawableEndCompat="@drawable/sort" />
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/item_spacing"
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

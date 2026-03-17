@@ -22,7 +22,12 @@ class CourseAdapterDelegate(
             LayoutInflater.from(parent.context),
             parent,
             false
-        )
+        ).apply {
+            (root.layoutParams as? ViewGroup.MarginLayoutParams)?.let {
+                it.bottomMargin = root.context.resources.getDimensionPixelSize(R.dimen.item_spacing)
+                root.layoutParams = it
+            }
+        }
         return CourseViewHolder(binding)
     }
 

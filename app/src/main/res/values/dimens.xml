@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Common sizes -->
+    <dimen name="small_padding">4dp</dimen>
+    <dimen name="main_padding">8dp</dimen>
+    <dimen name="medium_padding">10dp</dimen>
+    <dimen name="standard_padding">12dp</dimen>
+    <dimen name="item_spacing">16dp</dimen>
+    <dimen name="section_spacing">24dp</dimen>
+    <dimen name="extra_large_spacing">28dp</dimen>
+    <dimen name="divider_margin">32dp</dimen>
+
+    <!-- UI Elements -->
     <dimen name="button_radius">30dp</dimen>
     <dimen name="card_radius">16dp</dimen>
     <dimen name="card_image_radius">12dp</dimen>
-    <dimen name="main_padding">8dp</dimen>
     <dimen name="card_content_padding">16dp</dimen>
+
+    <!-- Specific components -->
+    <dimen name="icon_button_size">44dp</dimen>
+    <dimen name="filter_button_size">56dp</dimen>
+    <dimen name="bookmark_button_size">28dp</dimen>
+    <dimen name="bookmark_button_padding">6dp</dimen>
+    <dimen name="toolbar_margin_top">40dp</dimen>
+    <dimen name="details_image_height">240dp</dimen>
+    <dimen name="course_card_image_height">114dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_size_small">14sp</dimen>
 </resources>

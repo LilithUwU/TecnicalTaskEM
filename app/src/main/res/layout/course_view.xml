@@ -5,9 +5,7 @@
     app:cardCornerRadius="@dimen/card_radius"
     android:backgroundTint="@color/button_secondary_bg"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    android:layout_marginHorizontal="16dp">
+    android:layout_height="wrap_content">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +18,7 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="114dp"
+            android:layout_height="@dimen/course_card_image_height"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
 
@@ -33,13 +31,14 @@
             android:id="@+id/text_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="@dimen/main_padding"
+            android:layout_marginBottom="@dimen/main_padding"
+            android:textAppearance="?attr/textAppearanceCaption"
             android:background="@drawable/rounded_shape"
             android:drawableStart="@drawable/star"
-            android:drawablePadding="4dp"
-            android:paddingHorizontal="8dp"
-            android:paddingVertical="4dp"
+            android:drawablePadding="@dimen/small_padding"
+            android:paddingHorizontal="@dimen/main_padding"
+            android:paddingVertical="@dimen/small_padding"
             android:text="4.5"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -47,13 +46,14 @@
 
         <TextView
             android:id="@+id/text_date"
+            android:textAppearance="?attr/textAppearanceCaption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/small_padding"
             android:background="@drawable/rounded_shape"
-            android:drawablePadding="4dp"
-            android:paddingHorizontal="4dp"
-            android:paddingVertical="4dp"
+            android:drawablePadding="@dimen/small_padding"
+            android:paddingHorizontal="@dimen/small_padding"
+            android:paddingVertical="@dimen/small_padding"
             android:text="dd mmmm yyy"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/text_rating"
@@ -61,12 +61,12 @@
 
         <ImageButton
             android:id="@+id/buttonBookmark"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="@dimen/bookmark_button_size"
+            android:layout_height="@dimen/bookmark_button_size"
+            android:layout_marginTop="@dimen/main_padding"
+            android:layout_marginEnd="@dimen/main_padding"
             android:background="@drawable/circle_background"
-            android:padding="6dp"
+            android:padding="@dimen/bookmark_button_padding"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -86,6 +86,7 @@
 
             <TextView
                 android:id="@+id/textHeadline"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Java-разработчик с нуля"
@@ -98,8 +99,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+
                 android:maxLines="2"
-                android:hint="Освойте backend-разработку  и программирование на Java, фреймворки Spring и Maven, работу с базами данных и API. Создайте свой собственный проект, собрав портфолио и став востребованным специалистом для любой IT компании."
+                android:hint="@string/backend_java_spring_maven_api_it"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textHeadline" />
@@ -107,7 +110,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/medium_padding"
                 android:orientation="horizontal">
 
                 <TextView
@@ -116,6 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:hint="### ₽"
                     android:textColor="@color/button_main_text"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -126,6 +130,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:drawableEnd="@drawable/arrow"
                     android:gravity="end"
                     android:text="Подробнее"

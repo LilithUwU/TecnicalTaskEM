@@ -5,6 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:windowBackground">@color/background</item>
         <item name="fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/button_main_text</item>
+
 
         <!-- Apply the custom button style globally -->
         <item name="materialButtonStyle">@style/Widget.App.MainButton</item>
@@ -24,7 +26,6 @@
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance.App.Button</item>
         <item name="android:textAppearance">@style/TextAppearance.App.LabelLarge</item>
     </style>
-
 
 
     <style name="ShapeAppearance.App.Button" parent="ShapeAppearance.Material3.SmallComponent">

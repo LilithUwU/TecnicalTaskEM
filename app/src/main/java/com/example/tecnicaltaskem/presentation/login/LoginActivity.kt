@@ -6,9 +6,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
-import com.example.tecnicaltaskem.presentation.main.MainActivity
 import com.example.tecnicaltaskem.R
 import com.example.tecnicaltaskem.databinding.ActivityLoginBinding
+import com.example.tecnicaltaskem.presentation.main.MainActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -22,6 +22,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.buttonLogin.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
 
         binding.imageButtonVK.setOnClickListener {
@@ -31,7 +32,8 @@ class LoginActivity : AppCompatActivity() {
         binding.imageButtonOK.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, getString(R.string.link_ok).trim().toUri()))
         }
-//
+//todo
+
 //        lifecycleScope.launch {
 //            repeatOnLifecycle(Lifecycle.State.STARTED) {
 //                viewModel.isLoginButtonEnabled.collect { isEnabled ->

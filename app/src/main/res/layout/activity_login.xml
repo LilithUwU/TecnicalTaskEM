@@ -5,119 +5,144 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:padding="16dp"
+    android:padding="@dimen/item_spacing"
     >
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Вход"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp" />
+        android:text="@string/login"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
 
-    <TextView
-        android:id="@+id/textView2"
+        android:layout_marginBottom="@dimen/item_spacing" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email" />
+        android:layout_marginTop="@dimen/extra_large_spacing"
+        android:orientation="vertical">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="example@gmail.com"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxCornerRadiusTopStart="@dimen/button_radius"
-        app:boxCornerRadiusTopEnd="@dimen/button_radius"
-        app:boxCornerRadiusBottomStart="@dimen/button_radius"
-        app:boxCornerRadiusBottomEnd="@dimen/button_radius"
-        app:boxBackgroundColor="@color/text_field_background"
-        app:boxStrokeColor="#00000000">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextEmailAddress"
+        <TextView
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/button_main_text"
-            android:inputType="textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:text="@string/email"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Пароль" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Введите пароль"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxCornerRadiusTopStart="@dimen/button_radius"
-        app:boxCornerRadiusTopEnd="@dimen/button_radius"
-        app:boxCornerRadiusBottomStart="@dimen/button_radius"
-        app:boxCornerRadiusBottomEnd="@dimen/button_radius"
-        app:boxBackgroundColor="@color/text_field_background"
-        app:boxStrokeColor="#00000000">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextPassword"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_field_background"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:hint="@string/example_gmail_com"
+            app:boxBackgroundColor="@color/text_field_background"
+            app:boxCornerRadiusBottomEnd="@dimen/button_radius"
+            app:boxCornerRadiusBottomStart="@dimen/button_radius"
+            app:boxCornerRadiusTopEnd="@dimen/button_radius"
+            app:boxCornerRadiusTopStart="@dimen/button_radius"
+            app:boxStrokeColor="#00000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/button_main_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_marginTop="@dimen/item_spacing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Пароль"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            app:boxBackgroundColor="@color/text_field_background"
+            app:boxCornerRadiusBottomEnd="@dimen/button_radius"
+            app:boxCornerRadiusBottomStart="@dimen/button_radius"
+            app:boxCornerRadiusTopEnd="@dimen/button_radius"
+            app:boxCornerRadiusTopStart="@dimen/button_radius"
+            app:boxStrokeColor="#00000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="@color/text_field_background" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
 
     <Button
         android:id="@+id/buttonLogin"
+        android:layout_marginTop="@dimen/section_spacing"
         style="@style/TextAppearance.App.LabelLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Вход" />
+        android:text="@string/login"
+        />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Нету аккаунта?" />
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no_account"
+
+                android:textAppearance="?attr/textAppearanceCaption" />
+
+
+            <TextView
+                android:id="@+id/button_registration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/main_padding"
+                android:text="@string/registration"
+
+                android:textAppearance="?attr/textAppearanceCaption"
+                android:textColor="@color/button_main_bg"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/button_registration"
+            android:id="@+id/button_forgot_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Регистрация"
-            android:textColor="@color/button_main_bg"
-            android:textSize="14sp"
-            android:padding="8dp"
             android:clickable="true"
-            android:focusable="true"/>
-    </LinearLayout>
-    <TextView
-        android:id="@+id/button_forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Забыл пароль"
-        android:textColor="@color/button_main_bg"
-        android:textSize="14sp"
-        android:padding="8dp"
-        android:clickable="true"
-        android:focusable="true"/>
+            android:focusable="true"
+            android:padding="@dimen/main_padding"
+            android:text="@string/forgot_password"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:textColor="@color/button_main_bg"
+            android:textSize="@dimen/text_size_small" />
 
+    </LinearLayout>
 
     <View
-        android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="?android:attr/listDivider" />
+        android:layout_marginVertical="@dimen/divider_margin"
+        android:background="#4D555E"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"

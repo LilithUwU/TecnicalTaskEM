@@ -22,11 +22,11 @@ class AppViewModel(
     val selectedCourse: StateFlow<Course?> = _selectedCourse.asStateFlow()
 
     val courses: StateFlow<List<Course>> = getCoursesUseCase()
-        .stateIn(viewModelScope, SharingStarted.Companion.Lazily, emptyList())
+        .stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
 
     val savedCourses: StateFlow<List<Course>> = courses
         .map { allCourses -> allCourses.filter { it.hasLike } }
-        .stateIn(viewModelScope, SharingStarted.Companion.Lazily, emptyList())
+        .stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
 
     fun selectCourse(course: Course) {
         _selectedCourse.value = course
@@ -42,7 +42,7 @@ class AppViewModel(
         }
     }
 
-    fun sortByPublishedDate() = courses.map { it.sortedBy { course -> course.publishDate } }
+    fun sortByPublishedDate() = courses.map { it.sortedByDescending { course -> course.publishDate } }
 
     fun saveCourse() {
         _selectedCourse.value?.let { toggleBookmark(it) }
