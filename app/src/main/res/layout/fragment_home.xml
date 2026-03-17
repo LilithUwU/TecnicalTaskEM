@@ -21,7 +21,9 @@
             <com.google.android.material.search.SearchBar
                 android:id="@+id/search_bar"
                 android:layout_width="0dp"
-
+                app:titleTextColor="@color/button_main_text"
+                app:subtitleTextColor="@color/button_main_text"
+                android:backgroundTint="@color/button_secondary_bg"
                 android:layout_height="wrap_content"
                 android:hint="@string/search_courses"
                 app:layout_constraintBottom_toBottomOf="parent"

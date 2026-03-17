@@ -20,4 +20,5 @@
     <string name="chosen">Избранное</string>
     <string name="profile">Профиль</string>
     <string name="no_account">Нету аккаунта?</string>
+    <string name="java">Java-разработчик с нуля</string>
 </resources>

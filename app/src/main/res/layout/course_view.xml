@@ -2,10 +2,10 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardCornerRadius="@dimen/card_radius"
-    android:backgroundTint="@color/button_secondary_bg"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/button_secondary_bg"
+    app:cardCornerRadius="@dimen/card_radius">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,20 +33,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/main_padding"
             android:layout_marginBottom="@dimen/main_padding"
-            android:textAppearance="?attr/textAppearanceCaption"
             android:background="@drawable/rounded_shape"
             android:drawableStart="@drawable/star"
             android:drawablePadding="@dimen/small_padding"
             android:paddingHorizontal="@dimen/main_padding"
             android:paddingVertical="@dimen/small_padding"
             android:text="4.5"
+            android:textAppearance="?attr/textAppearanceCaption"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@+id/imageView" />
 
         <TextView
             android:id="@+id/text_date"
-            android:textAppearance="?attr/textAppearanceCaption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/small_padding"
@@ -55,6 +54,7 @@
             android:paddingHorizontal="@dimen/small_padding"
             android:paddingVertical="@dimen/small_padding"
             android:text="dd mmmm yyy"
+            android:textAppearance="?attr/textAppearanceCaption"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/text_rating"
             app:layout_constraintStart_toEndOf="@+id/text_rating" />
@@ -86,10 +86,10 @@
 
             <TextView
                 android:id="@+id/textHeadline"
-                android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Java-разработчик с нуля"
+                android:hint="@string/java"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:textColor="@color/button_main_text"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -98,11 +98,11 @@
                 android:id="@+id/textContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_padding"
                 android:ellipsize="end"
-                android:textAppearance="?attr/textAppearanceBodySmall"
-
-                android:maxLines="2"
                 android:hint="@string/backend_java_spring_maven_api_it"
+                android:maxLines="2"
+                android:textAppearance="?attr/textAppearanceBodySmall"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textHeadline" />
@@ -119,8 +119,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:hint="### ₽"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:textColor="@color/button_main_text"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -130,10 +130,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:drawableEnd="@drawable/arrow"
                     android:gravity="end"
                     android:text="Подробнее"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:textColor="@color/button_main_bg"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />

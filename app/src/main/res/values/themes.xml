@@ -7,6 +7,7 @@
         <item name="fontFamily">@font/roboto</item>
         <item name="android:textColor">@color/button_main_text</item>
 
+        <item name="colorSecondaryContainer">@color/text_field_background</item>
 
         <!-- Apply the custom button style globally -->
         <item name="materialButtonStyle">@style/Widget.App.MainButton</item>
