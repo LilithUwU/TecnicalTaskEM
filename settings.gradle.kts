@@ -25,3 +25,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Tecnical Task EM"
 include(":app")
+include(":data")
+include(":domain")

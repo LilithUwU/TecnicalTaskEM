@@ -7,23 +7,23 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.tecnicaltaskem.presentation.HomeFragment"
+        android:name="com.example.tecnicaltaskem.presentation.fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_favorites"
-        android:name="com.example.tecnicaltaskem.presentation.FavoritesFragment"
+        android:name="com.example.tecnicaltaskem.presentation.fragments.FavoritesFragment"
         android:label="Favorites"
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.tecnicaltaskem.presentation.ProfileFragment"
+        android:name="com.example.tecnicaltaskem.presentation.fragments.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/navigation_details"
-        android:name="com.example.tecnicaltaskem.presentation.DetailsFragment"
+        android:name="com.example.tecnicaltaskem.presentation.fragments.DetailsFragment"
         android:label="Details"
         tools:layout="@layout/fragment_details" />
 </navigation>

@@ -1,0 +1,8 @@
+com.example.domain-pngs-0 /Users/lilit/TecnicalTaskEM/domain/build/generated/res/pngs/release
+com.example.domain-updated_navigation_xml-1 /Users/lilit/TecnicalTaskEM/domain/build/generated/updated_navigation_xml/release
+com.example.domain-mergeReleaseResources-2 /Users/lilit/TecnicalTaskEM/domain/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.example.domain-mergeReleaseResources-3 /Users/lilit/TecnicalTaskEM/domain/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.example.domain-release-4 /Users/lilit/TecnicalTaskEM/domain/build/intermediates/merged_res/release/mergeReleaseResources
+com.example.domain-release-5 /Users/lilit/TecnicalTaskEM/domain/build/intermediates/packaged_res/release/packageReleaseResources
+com.example.domain-main-6 /Users/lilit/TecnicalTaskEM/domain/src/main/res
+com.example.domain-release-7 /Users/lilit/TecnicalTaskEM/domain/src/release/res

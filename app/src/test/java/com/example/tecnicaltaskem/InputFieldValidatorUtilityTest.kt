@@ -1,6 +1,6 @@
 package com.example.tecnicaltaskem
 
-import com.example.tecnicaltaskem.presentation.InputFieldValidatorUtility
+import com.example.tecnicaltaskem.presentation.helpers.InputFieldValidatorUtility
 import org.junit.Assert.*
 import org.junit.Test
 

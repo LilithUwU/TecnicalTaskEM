@@ -2,7 +2,7 @@ package com.example.tecnicaltaskem.presentation.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.tecnicaltaskem.presentation.InputFieldValidatorUtility
+import com.example.tecnicaltaskem.presentation.helpers.InputFieldValidatorUtility
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

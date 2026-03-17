@@ -6,7 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
-import com.example.tecnicaltaskem.MainActivity
+import com.example.tecnicaltaskem.presentation.main.MainActivity
 import com.example.tecnicaltaskem.R
 import com.example.tecnicaltaskem.databinding.ActivityLoginBinding
 
