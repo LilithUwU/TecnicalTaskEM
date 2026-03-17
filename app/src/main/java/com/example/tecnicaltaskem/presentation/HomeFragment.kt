@@ -21,7 +21,7 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeFragmentViewModel by viewModel(
         ownerProducer = { requireActivity() }
     )
-    private lateinit var adapter: CourseAdapter
+    private lateinit var adapter: DelegateAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,15 +40,14 @@ class HomeFragment : Fragment() {
         binding.textFilter.setOnClickListener {
             lifecycleScope.launch {
                 viewModel.sortByPublishedDate().collect { sortedCourses ->
-                    adapter.updateCourses(sortedCourses)
+                    adapter.setItems(sortedCourses)
                 }
             }
         }
     }
 
     private fun setupRecyclerView() {
-        adapter = CourseAdapter(
-            courses = emptyList(),
+        val courseDelegate = CourseAdapterDelegate(
             onCourseClick = { course ->
                 Log.d("BaseApp", "Course clicked: ${course.id}")
                 viewModel.selectCourse(course)
@@ -60,13 +59,15 @@ class HomeFragment : Fragment() {
             }
         )
 
+        adapter = DelegateAdapter(listOf(courseDelegate))
+
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
     }
     private fun observeViewModel() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getMockCourses().collect { courses ->
-                adapter.updateCourses(courses)
+                adapter.setItems(courses)
             }
         }
     }

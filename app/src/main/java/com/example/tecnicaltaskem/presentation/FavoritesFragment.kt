@@ -22,7 +22,7 @@ class FavoritesFragment : Fragment() {
         ownerProducer = { requireActivity() }
     )
 
-    private lateinit var adapter: CourseAdapter
+    private lateinit var adapter: DelegateAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,18 +41,19 @@ class FavoritesFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = CourseAdapter(
-            courses = emptyList(),
-            onBookmarkClick = { course ->
-                viewModel.toggleBookmark(course)
-            },
+        val courseDelegate = CourseAdapterDelegate(
             onCourseClick = { course ->
                 Log.d("BaseApp", "Course clicked: ${course.id}")
                 viewModel.selectCourse(course)
                 Log.d("BaseApp", "After selectCourse: ${viewModel.selectedCourse.value?.id}")
                 findNavController().navigate(R.id.navigation_details)
+            },
+            onBookmarkClick = { course ->
+                viewModel.toggleBookmark(course)
             }
         )
+
+        adapter = DelegateAdapter(listOf(courseDelegate))
 
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
@@ -61,7 +62,7 @@ class FavoritesFragment : Fragment() {
         viewModel.getSavedCourses()
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.savedCourses.collect { courses ->
-                adapter.updateCourses(courses)
+                adapter.setItems(courses)
             }
         }
     }
