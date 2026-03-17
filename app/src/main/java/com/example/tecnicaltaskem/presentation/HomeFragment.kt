@@ -6,19 +6,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tecnicaltaskem.R
+import com.example.tecnicaltaskem.data.local.entity.Course
+import com.example.tecnicaltaskem.data.repository.IRepository
+import com.example.tecnicaltaskem.databinding.FragmentDetailsBinding
+import com.example.tecnicaltaskem.databinding.FragmentFavoritesBinding
 import com.example.tecnicaltaskem.databinding.FragmentHomeBinding
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: HomeFragmentViewModel by activityViewModels()
+    private val viewModel: HomeFragmentViewModel by viewModel(
+        ownerProducer = { requireActivity() }
+    )
     private lateinit var adapter: CourseAdapter
 
     override fun onCreateView(
@@ -35,7 +45,7 @@ class HomeFragment : Fragment() {
 
         setupRecyclerView()
         observeViewModel()
-
+viewModel.delete()
         binding.textView11.setOnClickListener {
             lifecycleScope.launch {
                 viewModel.sortByPublishedDate().collect { sortedCourses ->
@@ -47,9 +57,9 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerView() {
         adapter = CourseAdapter(emptyList()) { course ->
-            Log.d("Database", "Course clicked: ${course.id}")
+            Log.d("BaseApp", "Course clicked: ${course.id}")
             viewModel.selectCourse(course)
-            Log.d("Database", "After selectCourse: ${viewModel.selectedCourse?.id}")
+            Log.d("BaseApp", "After selectCourse: ${viewModel.selectedCourse?.id}")
             findNavController().navigate(R.id.navigation_details)
         }
 
@@ -68,4 +78,7 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }
+

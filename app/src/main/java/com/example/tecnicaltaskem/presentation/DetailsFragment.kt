@@ -1,24 +1,20 @@
 package com.example.tecnicaltaskem.presentation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
-import com.example.tecnicaltaskem.R
+import androidx.fragment.app.Fragment
 import com.example.tecnicaltaskem.databinding.FragmentDetailsBinding
-import com.example.tecnicaltaskem.databinding.FragmentFavoritesBinding
-import kotlin.getValue
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class DetailsFragment : Fragment() {
     private var _binding: FragmentDetailsBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: HomeFragmentViewModel by activityViewModels()
-
+    private val viewModel: HomeFragmentViewModel by viewModel(
+        ownerProducer = { requireActivity() }
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,6 +40,9 @@ class DetailsFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+
         _binding = null
+
     }
 }
+

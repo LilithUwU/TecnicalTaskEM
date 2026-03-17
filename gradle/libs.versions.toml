@@ -1,8 +1,7 @@
 [versions]
-# Build Tools
 agp = "9.1.0"
-
-# Core Dependencies
+ksp = "1.9.21-1.0.16"
+roomVersion = "2.5.2"
 activity = "1.13.0"
 appcompat = "1.7.1"
 constraintlayout = "2.2.1"
@@ -12,8 +11,7 @@ material = "1.13.0"
 navigation = "2.9.7"
 recyclerview = "1.4.0"
 
-# Room (Updated from 2.8.4 to 2.6.1 - modern Kotlin support)
-roomVersion = "2.6.1"
+
 
 
 # Retrofit (Network Requests)
@@ -26,8 +24,7 @@ coroutines = "1.7.3"
 # Lifecycle & ViewModel
 lifecycle = "2.7.0"
 
-# KSP (Kotlin Symbol Processing - for Room compiler)
-ksp = "1.9.21-1.0.16"
+
 
 # Third Party
 glide = "5.0.5"

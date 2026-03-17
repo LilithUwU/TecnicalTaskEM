@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -54,8 +55,10 @@ dependencies {
     annotationProcessor (libs.compiler)
 
     implementation(libs.androidx.room.runtime)
-    annotationProcessor(libs.androidx.room.compiler)
-    testImplementation(libs.androidx.room.testing)
+    implementation(libs.androidx.room.ktx)
+
+    ksp(libs.androidx.room.compiler)
+
 
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.core)
