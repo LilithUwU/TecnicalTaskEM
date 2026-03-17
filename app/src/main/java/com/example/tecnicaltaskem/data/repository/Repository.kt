@@ -10,23 +10,32 @@ interface IRepository {
     suspend fun delete(id: Int)
     suspend fun insert(course: Course)
     suspend fun getCourseIds(): List<Int>
+    suspend fun setLike(id: Int, like: Boolean) : Int
+    suspend fun getCourseById(id: Int): Course?
 }
 
-class Repository (private val courseDao: CourseDao) : IRepository {
-    override  fun getCourses(): Flow<List<Course>> {
+class Repository(private val courseDao: CourseDao) : IRepository {
+    override fun getCourses(): Flow<List<Course>> {
         return courseDao.getAll()
     }
+
     override suspend fun delete(id: Int) {
         courseDao.delete(id)
     }
+
     override suspend fun insert(course: Course) {
         courseDao.insert(course)
     }
 
     override suspend fun getCourseIds(): List<Int> {
-       return courseDao.getCourseIds()
+        return courseDao.getCourseIds()
     }
 
+    override suspend fun setLike(id: Int, like: Boolean): Int {
+        return courseDao.setLike(id, like)
+    }
 
-
+    override suspend fun getCourseById(id: Int): Course? {
+        return courseDao.getCourseById(id)
+    }
 }

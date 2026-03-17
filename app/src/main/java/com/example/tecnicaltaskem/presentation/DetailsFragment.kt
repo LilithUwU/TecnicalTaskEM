@@ -28,7 +28,7 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val course = viewModel.selectedCourse
+        val course = viewModel.selectedCourse.value
         if (course != null) {
             binding.textHeadline.text = course.title
             binding.textDescription.text = course.text
@@ -40,9 +40,6 @@ class DetailsFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-
         _binding = null
-
     }
 }
-

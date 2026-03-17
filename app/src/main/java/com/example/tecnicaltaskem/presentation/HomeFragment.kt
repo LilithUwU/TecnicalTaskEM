@@ -6,19 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tecnicaltaskem.R
-import com.example.tecnicaltaskem.data.local.entity.Course
-import com.example.tecnicaltaskem.data.repository.IRepository
-import com.example.tecnicaltaskem.databinding.FragmentDetailsBinding
-import com.example.tecnicaltaskem.databinding.FragmentFavoritesBinding
 import com.example.tecnicaltaskem.databinding.FragmentHomeBinding
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -45,8 +37,7 @@ class HomeFragment : Fragment() {
 
         setupRecyclerView()
         observeViewModel()
-viewModel.delete()
-        binding.textView11.setOnClickListener {
+        binding.textFilter.setOnClickListener {
             lifecycleScope.launch {
                 viewModel.sortByPublishedDate().collect { sortedCourses ->
                     adapter.updateCourses(sortedCourses)
@@ -56,12 +47,18 @@ viewModel.delete()
     }
 
     private fun setupRecyclerView() {
-        adapter = CourseAdapter(emptyList()) { course ->
-            Log.d("BaseApp", "Course clicked: ${course.id}")
-            viewModel.selectCourse(course)
-            Log.d("BaseApp", "After selectCourse: ${viewModel.selectedCourse?.id}")
-            findNavController().navigate(R.id.navigation_details)
-        }
+        adapter = CourseAdapter(
+            courses = emptyList(),
+            onCourseClick = { course ->
+                Log.d("BaseApp", "Course clicked: ${course.id}")
+                viewModel.selectCourse(course)
+                Log.d("BaseApp", "After selectCourse: ${viewModel.selectedCourse.value?.id}")
+                findNavController().navigate(R.id.navigation_details)
+            },
+            onBookmarkClick = { course ->
+                viewModel.toggleBookmark(course)
+            }
+        )
 
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
@@ -81,4 +78,3 @@ viewModel.delete()
 
 
 }
-

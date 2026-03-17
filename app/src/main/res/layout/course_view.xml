@@ -54,13 +54,13 @@
             android:drawablePadding="4dp"
             android:paddingHorizontal="4dp"
             android:paddingVertical="4dp"
-            android:text="22 Мая 2024"
+            android:text="dd mmmm yyy"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/text_rating"
             app:layout_constraintStart_toEndOf="@+id/text_rating" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/buttonBookmark"
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_marginTop="8dp"
@@ -70,14 +70,16 @@
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/navigation_bookmark" />
+            app:srcCompat="@drawable/navigation_bookmark"
+            app:tint="@color/button_main_bg" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_content_padding"
             android:orientation="vertical"
-            android:padding="@dimen/main_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -86,7 +88,7 @@
                 android:id="@+id/textHeadline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Java-разработчик с нуля"
+                android:hint="Java-разработчик с нуля"
                 android:textColor="@color/button_main_text"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -97,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="Освойте backend-разработку  и программирование на Java, фреймворки Spring и Maven, работу с базами данных и API. Создайте свой собственный проект, собрав портфолио и став востребованным специалистом для любой IT компании."
+                android:hint="Освойте backend-разработку  и программирование на Java, фреймворки Spring и Maven, работу с базами данных и API. Создайте свой собственный проект, собрав портфолио и став востребованным специалистом для любой IT компании."
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textHeadline" />
@@ -105,6 +107,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -113,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:text="999 ₽"
+                    android:hint="### ₽"
                     android:textColor="@color/button_main_text"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />

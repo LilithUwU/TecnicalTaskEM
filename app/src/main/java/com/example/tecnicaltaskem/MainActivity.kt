@@ -6,10 +6,13 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.tecnicaltaskem.databinding.ActivityMainBinding
 import com.example.tecnicaltaskem.presentation.HomeFragmentViewModel
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -40,11 +43,33 @@ class MainActivity : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             navController.popBackStack()
         }
+        
         binding.btnBookmark.setOnClickListener {
             Log.d("Database", "Button clicked!")
-
             viewModel.saveCourse()
             Toast.makeText(this, "Bookmark", Toast.LENGTH_SHORT).show()
         }
+
+        observeViewModel()
+    }
+
+    private fun observeViewModel() {
+        lifecycleScope.launch {
+            combine(viewModel.selectedCourse, viewModel.courses) { selected, courses ->
+                val selectedId = selected?.id
+                courses.find { it.id == selectedId }?.hasLike ?: selected?.hasLike ?: false
+            }.collect { isBookmarked ->
+                updateBookmarkIcon(isBookmarked)
+            }
+        }
+    }
+
+    private fun updateBookmarkIcon(isBookmarked: Boolean) {
+        val iconRes = if (isBookmarked) {
+            R.drawable.navigation_bookmark_filled
+        } else {
+            R.drawable.navigation_bookmark
+        }
+        binding.btnBookmark.setImageResource(iconRes)
     }
 }

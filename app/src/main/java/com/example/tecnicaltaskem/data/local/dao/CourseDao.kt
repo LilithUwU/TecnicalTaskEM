@@ -22,4 +22,10 @@ interface CourseDao {
 
     @Query("SELECT id FROM courses")
     suspend fun getCourseIds(): List<Int>
+
+    @Query("UPDATE courses SET hasLike = :like WHERE id = :id")
+    suspend fun setLike(id: Int, like: Boolean) : Int
+
+    @Query("SELECT * FROM courses WHERE id = :id")
+    suspend fun getCourseById(id: Int): Course?
 }
