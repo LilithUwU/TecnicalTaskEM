@@ -8,7 +8,7 @@ import com.example.tecnicaltaskem.data.local.entity.Course
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface Dao{
+interface CourseDao{
     @Query("SELECT * FROM courses")
     fun getAll(): Flow<List<Course>>
 

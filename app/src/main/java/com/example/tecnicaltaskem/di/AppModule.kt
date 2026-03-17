@@ -3,7 +3,7 @@ package com.example.tecnicaltaskem.di
 
 import androidx.room.Room
 import com.example.tecnicaltaskem.data.AppDatabase
-import com.example.tecnicaltaskem.data.local.dao.Dao
+import com.example.tecnicaltaskem.data.local.dao.CourseDao
 import com.example.tecnicaltaskem.data.repository.IRepository
 import com.example.tecnicaltaskem.data.repository.Repository
 import com.example.tecnicaltaskem.presentation.HomeFragmentViewModel
@@ -22,10 +22,10 @@ val appModule = module {
             .build()
     }
 
-    single { get<AppDatabase>().courseDao() }
+    single<CourseDao> { get<AppDatabase>().courseDao() }
 
     single<IRepository> {
-        Repository(get<Dao>())
+        Repository(get())
     }
 
     viewModelOf(::HomeFragmentViewModel)
