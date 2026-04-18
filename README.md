@@ -1,4 +1,8 @@
 # Kotlin Technical Task Project
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/855f2b0c-fbb9-43e4-90eb-d362213e3392" />
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/c4003b67-3456-4f89-a696-54974602cd59" />
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/c60f53a5-1e49-407b-9ea8-c29472bbeaca" />
+
 
 ## Overview
 This project is a Kotlin-based technical task designed to showcase the fundamental principles of Kotlin development, including but not limited to: object-oriented programming, functional programming, and using Kotlin to build efficient applications.
